@@ -14,6 +14,7 @@
 * ### [类与样式绑定](#classes-are-bound-to-styles)
 * ### [插槽](#slot)
 * ### [动画](#animation)
+* ### [路由](#router)
 * ### [其他和扩展](#miscellaneous-and-extended)
     * #### [watchEffect](#watch-effect)
     * #### [props](#props)
@@ -811,6 +812,8 @@ const obj = reactive({
 </style>
 ```
 
+<h2 id="router">路由</h2>
+
 <h2 id="miscellaneous-and-extended">其他和扩展</h2>
 
 > 这里是一些其他的API和一些基于Vue的库
@@ -1090,7 +1093,6 @@ const value = inject("value")
 ```
 
 <h2 id="idea-directive">IDEA项目命令</h2>
-
 
 ## Project setup
 
