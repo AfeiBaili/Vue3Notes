@@ -17,10 +17,10 @@
 * ### [路由](#router)
 * ### [其他和扩展](#miscellaneous-and-extended)
     * #### [watchEffect](#watch-effect)
-    * #### [props](#props)
+    * #### [props](#props-title)
     * #### [pinia](#pinia)
     * #### [自定义事件](#custom-events)
-    * #### [$attrs](#attrs)
+    * #### [$attrs](#attrs-title)
     * #### [$refs和$parent](#refs-and-parent)
     * #### [依赖注入](#dependency-injection)
     * #### [KeepAlive](#keep-alive)
@@ -848,7 +848,7 @@ watch([name, age], (value) => {
 })
 ```
 
-<h3 id="props">Props</h3>
+<h3 id="props-title">Props</h3>
 
 
 > props用于传输父给子传输数据,是很方便的一种数据传输通过`defineProps()`。传入的属性名要和参数名字相同  
@@ -992,7 +992,7 @@ count.subscribe((mutate, state) => {
 
 ```
 
-<h3 id="attrs">$attrs</h3>
+<h3 id="attrs-title">$attrs</h3>
 
 > `$attrs`主要作用于祖给后台传,而且给后代传的过程中不需要经过中间人进行传,直接传入到后代组件  
 > 其实没有声明props也能收到值,但是存放在`$attrs`中
