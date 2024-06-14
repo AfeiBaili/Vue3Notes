@@ -2,30 +2,30 @@
 
 参考[Vue](https://cn.vuejs.org/guide/introduction.html)官方文档
 
-* ### [组件注册](#component-registration)
-* ### [模板语法](#template-syntax)
-* ### [响应式](#responsive)
-* ### [计算属性](#compute-attributes)
-* ### [监视属性](#monitor-properties)
-* ### [条件渲染](#conditional-rendering)
-* ### [列表渲染](#list-rendering)
-* ### [事件处理](#event-processing)
-* ### [表单输入绑定](#form-input-bindings)
-* ### [类与样式绑定](#classes-are-bound-to-styles)
-* ### [插槽](#slot)
-* ### [动画](#animation)
-* ### [其他和扩展](#miscellaneous-and-extended)
-    * #### [watchEffect](#watch-effect)
+* ### [组件注册](#组件注册)
+* ### [模板语法](#模板语法)
+* ### [响应式](#响应式)
+* ### [计算属性](#计算属性)
+* ### [监视属性](#监视属性)
+* ### [条件渲染](#条件渲染)
+* ### [列表渲染](#列表渲染)
+* ### [事件处理](#事件处理)
+* ### [表单输入绑定](#表单输入绑定)
+* ### [类与样式绑定](#类与样式绑定)
+* ### [插槽](#插槽)
+* ### [动画](#动画)
+* ### [其他和扩展](#其他和扩展)
+    * #### [watchEffect](#watchEffect)
     * #### [props](#props)
     * #### [pinia](#pinia)
-    * #### [自定义事件](#custom-events)
+    * #### [自定义事件](#自定义事件)
     * #### [$attrs](#attrs)
-    * #### [$refs和$parent](#refs-and-parent)
-    * #### [依赖注入](#dependency-injection)
-    * #### [KeepAlive](#keep-alive)
-* ### [IDEA项目命令](#idea-directive)
+    * #### [$refs和$parent](#refs和parent)
+    * #### [依赖注入](#依赖注入)
+    * #### [KeepAlive](#KeepAlive)
+* ### [IDEA项目命令](#IDEA项目命令)
 
-<h2 id="component-registration">组件注册</h2>
+## 组件注册
 
 > 组件是一个HTML、CSS、JS的代码片段  
 > 一个组件使用前要先进行注册否则不生效  
@@ -50,7 +50,7 @@ app.component("MyConponent", MyConponent)
 </script>
 ```
 
-<h2 id="template-syntax">模板语法</h2>
+## 模板语法
 
 ### 插值语法
 
@@ -112,7 +112,7 @@ const name = reactive({
 
 ![img.png](readmeimages/img.png)
 
-<h2 id="responsive">响应式</h2>
+## 响应式
 
 ### ref()
 
@@ -161,7 +161,7 @@ setup(props, context){
 <script setup></script>
 ```
 
-<h2 id="compute-attributes">计算属性</h2>
+## 计算属性
 
 > 模板中可以执行的语法虽然方便,如果在模板中写太多逻辑就会导致很臃肿,不易阅读,难以维护,但有了计算属性可以很方便地在模板中写处理逻辑
 
@@ -194,8 +194,7 @@ const name = computed({
 
 > 通常第一种写法叫做计算属性简写方式
 
-<h2 id="monitor-properties">监视属性</h2>
-
+## 监视属性
 
 > 侦听器用于某个属性进行更改时候调用指定的函数来,来完成一些作用  
 > 侦听器`watch()`在组合式API中调用它可以创建一个侦听器。由于是监视(侦听)作用它不需要返回值  
@@ -245,7 +244,7 @@ const name = ref("张三")
 watch(name, callBack, {once: true})
 ```
 
-<h2 id="conditional-rendering">条件渲染</h2>
+## 条件渲染
 
 ### v-if
 
@@ -293,7 +292,7 @@ watch(name, callBack, {once: true})
 
 > v-if在值更改时,其会被销毁和重建的,如果显示和隐藏比较频繁更推荐使用v-show
 
-<h2 id="list-rendering">列表渲染</h2>
+## 列表渲染
 
 > 在Vue中可以通过v-for来渲染一个列表,通过item in items语法使用,最好使用:key指令搭配,:key是Vue内部维护的一个属性
 
@@ -303,7 +302,7 @@ watch(name, callBack, {once: true})
 
 ```
 
-<h2 id="event-processing">事件处理</h2>
+## 事件处理
 
 > 事件是js中较为常用的交互之一,我们可以在Vue中使用`v-on:click="function"`来进行一个事件绑定。如果`@click`
 > 的值是一个函数并且有参数,可以用`$event`进行占位,拿到event。
@@ -418,7 +417,7 @@ const funcitonName = function () {
 .middle
 ```
 
-<h2 id="form-input-bindings">表单输入绑定</h2>
+## 表单输入绑定
 
 > 在前端中获取输入值,Vue提供了一个指令`v-model`可以动态的获取表单中的值
 
@@ -508,7 +507,7 @@ const radioValue = ref("")
 
 ```
 
-<h2 id="classes-are-bound-to-styles">类与样式绑定</h2>
+## 类与样式绑定
 
 ### 类名绑定
 
@@ -586,7 +585,7 @@ const obj = reactive({
 
 ```
 
-<h2 id="slot">插槽</h2>
+## 插槽
 
 > 插槽是一个将节点内容传入到子组件的一种传输方式,需要一个入口和出口进行配对
 
@@ -673,7 +672,7 @@ const obj = reactive({
 
 ```
 
-<h2 id="animation">动画</h2>
+## 动画
 
 > 在Vue中使用动画需要一个特殊的标签`<Transition>`,在这个标签中只能有一个根标签,
 > 如果有多个标签需要使用`<TransitionGroup>`。工作原理是当选中的元素,隐藏或显示时给予特定了类用来显示或者隐藏元素的动画,
@@ -811,12 +810,11 @@ const obj = reactive({
 </style>
 ```
 
-<h2 id="miscellaneous-and-extended">其他和扩展</h2>
+## 其他和扩展
 
 > 这里是一些其他的API和一些基于Vue的库
 
-<h3 id="watch-effect">watchEffect</h3>
-
+### watchEffect
 
 > `watchEffect()`是一个监视的函数,它可以不让你传入依赖项,直接监视回调函数中使用过的值,对比watch会更加方便些
 
@@ -845,8 +843,7 @@ watch([name, age], (value) => {
 })
 ```
 
-<h3 id="props">Props</h3>
-
+### props
 
 > props用于传输父给子传输数据,是很方便的一种数据传输通过`defineProps()`。传入的属性名要和参数名字相同  
 > 也可以传入一个函数让子将参数传入完成子给父传  
@@ -886,8 +883,7 @@ watch([name, age], (value) => {
 
 ```
 
-<h3 id="pinia">Pinia</h3>
-
+### pinia
 
 > pinia是一个符合直觉的状态管理工具,用于集中式管理数据
 
@@ -962,8 +958,7 @@ count.subscribe((mutate, state) => {
 })
 ``` 
 
-<h3 id="custom-events">自定义事件</h3>
-
+### 自定义事件
 
 > 自定义事件比起props更适合用于子给父传,通过父组件添加`@自定义事件名`
 > 属性,然后子再接收事件名并返回一个对象,通过对象就可以触发函数。
@@ -989,7 +984,7 @@ count.subscribe((mutate, state) => {
 
 ```
 
-<h3 id="attrs">$attrs</h3>
+### $attrs
 
 > `$attrs`主要作用于祖给后台传,而且给后代传的过程中不需要经过中间人进行传,直接传入到后代组件  
 > 其实没有声明props也能收到值,但是存放在`$attrs`中
@@ -1016,8 +1011,7 @@ count.subscribe((mutate, state) => {
 const props = defineProps(["count"]);
 ```
 
-<h3 id="refs-and-parent">$refs和$parent</h3>
-
+### $refs和$parent
 
 > 通过`defineExpose({})`暴露,子或父的数据就可以在对方传递,注意的是$refs和$parent都是通过模板进行传输的,因为在Vue3中并没有this
 
@@ -1056,8 +1050,7 @@ defineExpose({count})
 
 ```
 
-<h3 id="dependency-injection">依赖注入</h3>
-
+### 依赖注入
 
 > 在用props给后代传输时,中间组件并不需要props的值导致显得很多余, 依赖和注入可以完美适用此时机,通过`provide("key",值)`
 > ,再通过`inject("key")`接收,如果传入的是一个响应式对象,这可以通过对象直接进行响应式
@@ -1075,8 +1068,7 @@ provide("value1", value)
 const value = inject("value")
 ```
 
-<h3 id="keep-alive">KeepAlive</h3>
-
+### KeepAlive
 
 > 当你销毁组件时，表单中的内容会消失，这导致输入过的内容一切换路由就无法保存，但是`KeepAlive`
 > 可以让组件保持存在不销毁，这样即使你切换组件也不会丢失输入的内容。通过KeepAlive进行包裹不被销毁的内容
@@ -1089,8 +1081,7 @@ const value = inject("value")
 
 ```
 
-<h2 id="idea-directive">IDEA项目命令</h2>
-
+## IDEA项目命令
 
 ## Project setup
 
