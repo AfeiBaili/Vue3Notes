@@ -2,7 +2,7 @@
 
 参考[Vue](https://cn.vuejs.org/guide/introduction.html)官方文档
 
-* ### [组件注册](#组件注册)
+* ### [组件注册](#component-registration)
 * ### [模板语法](#模板语法)
 * ### [响应式](#响应式)
 * ### [计算属性](#计算属性)
@@ -25,7 +25,7 @@
     * #### [KeepAlive](#KeepAlive)
 * ### [IDEA项目命令](#IDEA项目命令)
 
-<h2 id="组件注册">组件注册</h2>
+<h2 id="component-registration">组件注册</h2>
 
 > 组件是一个HTML、CSS、JS的代码片段  
 > 一个组件使用前要先进行注册否则不生效  
