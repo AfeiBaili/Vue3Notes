@@ -26,12 +26,12 @@ function removeItem() {
   transition: all 0.5s;
 }
 
+.v-leave-active {
+  position: absolute;
+}
+
 .v-enter-from, .v-leave-to {
   opacity: 0;
   transform: translateY(-30px);
-}
-
-.v-leave-active {
-  position: absolute;
 }
 </style>

@@ -13,7 +13,8 @@ import formEntry from "@/hooks/formEntry";
 import componentEvent from "@/hooks/componentEvent";
 import SlotDemo from "@/components/SlotDemo.vue";
 import TransitionDemo from "@/components/TransitionDemo.vue";
-import TransitionGroupDemo from "@/components/TransitionGroupDemo.vue";
+// import TransitionGroupDemo from "@/components/TransitionGroupDemo.vue";
+import RouterDemo from "@/components/RouterDemo.vue";
 
 const name1 = templateSyntax()
 const obj1 = changeNameDome()
@@ -80,7 +81,9 @@ defineExpose({value})
     <h2>Transition</h2>
     <TransitionDemo></TransitionDemo>
     <h2>TransitionGroup</h2>
-    <TransitionGroupDemo></TransitionGroupDemo>
+    <!--    <TransitionGroupDemo></TransitionGroupDemo>-->
+    <h2>路由</h2>
+    <RouterDemo></RouterDemo>
   </div>
 </template>
 

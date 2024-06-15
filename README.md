@@ -814,6 +814,74 @@ const obj = reactive({
 
 <h2 id="router">路由</h2>
 
+### 安装
+
+> 路由是一个不用刷新页面而更新页面的一个操作,使用路由之前先安装路由通过`npm i vue-router`安装
+
+```
+npm i vue-router 
+```
+
+### 配置
+
+> 配置路由需要`routes`配置属性,配置一个数组
+
+```javascript
+import {createRouter} from "vue-router"
+
+export default createRouter({
+    routes: []
+})
+```
+
+> 在配置数组中每个路由都用一个对象表示每个对象都有`path`路径、`component`组件、`children`子路由。
+> `path`路径既是在URL栏切换的路径,
+> `component`是切换路由显示什么组件,
+> `children`是嵌套路由用法
+
+```javascript
+    routes: [
+    {path: "/home", component: Component},
+]
+```
+
+### 导入
+
+> 导入需要通过VueApp导入
+
+```javascript
+import {createApp} from "vue"
+import route from "@/route/index.js"
+
+createApp(App).use(route).mount("#app")
+```
+
+### 使用
+
+> 要让路由在页面上显示需要两个标签`router-link`和`router-view`,`router-link`是要配置的跳转路由,`router-view`
+> 是路由显示的位置  
+> router-link有一个to的prop可以传入一个对象和一个路径,通过path属性来确定切换哪些组件
+
+```html
+
+<router-link to="/home"></router-link>
+<router-link to="/nav"></router-link>
+<router-view></router-view>
+
+```
+
+> 路由还可以传入参数分别是query参数和params参数,通过`$route.参数类型`来获取指定的参数
+
+```html
+
+<router-link :to="{
+  path:'/home',
+  params:{username:'张三'}
+  ...
+}"></router-link>
+
+```
+
 <h2 id="miscellaneous-and-extended">其他和扩展</h2>
 
 > 这里是一些其他的API和一些基于Vue的库
